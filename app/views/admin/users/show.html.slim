@@ -1,0 +1,26 @@
+h1 ユーザーの詳細
+
+.nav.justify-content-end
+table.table.table-hover
+  tbody
+    tr
+      th = 'ID'
+      td = @user.id
+    tr
+      td = '名前'
+      th =  @user.name
+    tr
+      th = 'メールアドレス'
+      td =  @user.email
+    tr
+      th = '管理者権限'
+      td = @user.admin? ? 'あり' : 'なし'
+    tr
+      th = '作成日'
+      td =  @user.created_at
+    tr
+      th = '更新日'
+      td =  @user.updated_at
+
+= link_to '編集', edit_admin_user_path, class: 'btn btn-primary mr-3'
+= link_to '削除', [:admin, @user], method: :delete, data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'

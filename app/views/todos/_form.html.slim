@@ -1,3 +1,8 @@
+- if todo.errors.present?
+  ul#error_explanation
+    - todo.errors.full_messages.each do |message|
+      li = message
+
 = form_with model: @todo, local: true do |f|
     .form-group
         = f.label :name
@@ -5,4 +10,4 @@
     .form-group
         = f.label :description
         = f.text_area :description,rows: 5, class: 'form-control', id: 'todo_description'
-    = f.submit '更新', class: 'btn btn-primary'
+    = f.submit '登録', class: 'btn btn-primary'

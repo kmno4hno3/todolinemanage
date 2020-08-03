@@ -12,7 +12,7 @@ table.table.table-hover
             td = @todo.name
         tr
             td = '詳しい説明'
-            td = simple_format(h(@todo.description), {}, sanitize: false, wrapper_tag: "div")
+            td = auto_link(simple_format(h(@todo.description), {}, sanitize: false, wrapper_tag: "div"))
         tr
             td = '作成日'
             td = @todo.created_at
@@ -20,4 +20,4 @@ table.table.table-hover
             td = '更新日'
             td = @todo.updated_at
 
-= link_to '編集', edit_todo_path, 'btn btn-primary'
+= link_to '編集', edit_todo_path, class:'btn btn-primary'
