@@ -1,0 +1,23 @@
+h1 Todoの詳細
+
+.nav.justify-content-end
+    = link_to '一覧', todos_path, class:'nav-link'
+table.table.table-hover
+    tbody
+        tr
+            td = 'id'
+            td = @todo.id
+        tr
+            td = 'Todoタイトル'
+            td = @todo.name
+        tr
+            td = '詳しい説明'
+            td = simple_format(h(@todo.description), {}, sanitize: false, wrapper_tag: "div")
+        tr
+            td = '作成日'
+            td = @todo.created_at
+        tr
+            td = '更新日'
+            td = @todo.updated_at
+
+= link_to '編集', edit_todo_path, 'btn btn-primary'

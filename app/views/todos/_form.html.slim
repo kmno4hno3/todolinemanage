@@ -1,0 +1,8 @@
+= form_with model: @todo, local: true do |f|
+    .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control', id: 'todo_name'
+    .form-group
+        = f.label :description
+        = f.text_area :description,rows: 5, class: 'form-control', id: 'todo_description'
+    = f.submit '更新', class: 'btn btn-primary'

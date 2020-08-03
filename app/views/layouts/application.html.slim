@@ -8,13 +8,14 @@ html
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload"
     = javascript_pack_tag "application"
   body
-    nav.navbar.navbar-expand-sm.navbar-light.bg-light
-      a.navbar-brand = "TodoLineManage"
-      a.nav-item.nav-link href="#" 
-        = "登録"
-      a.nav-item.nav-link = "ログイン"
-      a.nav-item.nav-link = "ログアウト"
+    .app-title.nav.navbar.navbar-expand-md.navbar-light.bg-light
+      a.navbar-brand TodoLineManage
+      a.nav-item.nav-link href="#" 登録
+      a.nav-item.nav-link href="#" ログイン
+      a.nav-item.nav-link href="#" ログアウト
     
 
-
+    .container
+      - if flash.notice.present?
+        .alert.alert-success = flash.notice
     = yield
