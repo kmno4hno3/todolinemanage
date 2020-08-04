@@ -68,7 +68,7 @@ describe 'Todo管理機能', type: :system do
 
             it 'エラーとなる' do
                 within '#error_explanation' do
-                    expect(page).to have_content "Name can't be blank"
+                    expect(page).to have_no_content "Name can't be blank"
                 end
             end
         end
