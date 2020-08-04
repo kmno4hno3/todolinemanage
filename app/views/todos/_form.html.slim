@@ -5,9 +5,9 @@
 
 = form_with model: @todo, local: true do |f|
     .form-group
-        = f.label :name
+        = f.label :name, 'Todoタイトル'
         = f.text_field :name, class: 'form-control', id: 'todo_name'
     .form-group
-        = f.label :description
+        = f.label :description, '詳しい説明'
         = f.text_area :description,rows: 5, class: 'form-control', id: 'todo_description'
     = f.submit '登録', class: 'btn btn-primary'
